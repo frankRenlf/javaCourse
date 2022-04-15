@@ -22,8 +22,8 @@ public class Book {
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", type='" + type + '\'' +
-                ", price=" + price +
-                ", state=" + isBorrowed +
+                ", price=" + price + '\'' +
+                ", loanable='" + (!isBorrowed ? "yes'" : "no'") +
                 '}';
     }
 

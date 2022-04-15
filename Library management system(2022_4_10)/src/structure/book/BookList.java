@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class BookList {
 
-    private Book[] bookList = new Book[10];
+    private final Book[] bookList = new Book[10];
     private int usedSize;
 
     public BookList() {
