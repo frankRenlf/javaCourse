@@ -25,7 +25,7 @@ public class MyArrayList {
         this.array = array;
     }
 
-    public void newArray(int[] newArray){
+    public void newArray(int[] newArray) {
         this.array = newArray;
         this.usedSize = newArray.length;
     }
@@ -45,7 +45,7 @@ public class MyArrayList {
 
     //扩容
     public void CapacityExpansion() {
-        this.array = Arrays.copyOf(this.array, this.usedSize * 2);
+        this.array = Arrays.copyOf(this.array, this.usedSize >> 1 + this.usedSize);
     }
 
     // 新增元素,默认在数组最后新增
