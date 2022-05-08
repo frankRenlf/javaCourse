@@ -2,9 +2,12 @@ import mySingleList.MySingleList;
 
 public class TestList {
 
-
-
     public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.findDuplicates(new int[]{1, 3, 3, 2, 2, 1, 4}));
+    }
+
+    public static void main4(String[] args) {
         MySingleList mySingleList = new MySingleList();
         mySingleList.addLast(3);
         mySingleList.addLast(1);

@@ -14,6 +14,23 @@ class ListNode {
 //1.分为两个链表,一个链表放小于x的节点，一个链表放大于等于x的节点
 //2.连接两个链表
 public class Solution {
+
+    public List<Integer> findDuplicates(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        int len = nums.length;
+        int tmp = 0;
+        for (int i = 0; i < len; i++) {
+            tmp = Math.abs(nums[i]);
+            if (nums[tmp - 1] > 0) {
+                nums[tmp - 1] = -nums[tmp - 1];
+            } else {
+                list.add(tmp);
+            }
+        }
+        return list;
+    }
+
+
     public ListNode partition(ListNode pHead, int x) {
         // write code here
         //分为两个链表,一个链表放小于x的节点，一个链表放大于等于x的节点
