@@ -57,6 +57,15 @@ public class MySingleList {
         System.out.println();
     }
 
+    public void displayList(ListNode x) {
+        ListNode node = x;
+        while (node != null) {
+            System.out.print(node.getValue() + " ");
+            node = node.getNext();
+        }
+        System.out.println();
+    }
+
     //头插法
     public void addFirst(int data) {
         ListNode node = new ListNode(data);
@@ -203,6 +212,43 @@ public class MySingleList {
             head = head.getNext();
         }
         return true;
+    }
+
+    public ListNode partition(int x) {
+        ListNode smaller = null;
+        ListNode smallerHead = null;
+        ListNode bigger = null;
+        ListNode biggerHead = null;
+
+        ListNode pHead = head;
+        while (pHead != null) {
+            if (pHead.getValue() < x) {
+                if (smallerHead == null) {
+                    smallerHead = pHead;
+                    smaller = pHead;
+                } else {
+                    smaller.next = pHead;
+                    smaller = smaller.next;
+                }
+            } else {
+                if (biggerHead == null) {
+                    biggerHead = pHead;
+                    bigger = pHead;
+                } else {
+                    bigger.next = pHead;
+                    bigger = bigger.next;
+                }
+            }
+            pHead=pHead.getNext();
+        }
+        if(smallerHead==null){
+            return biggerHead;
+        }
+        if(biggerHead==null){
+            return smallerHead;
+        }
+        smaller.setNext(biggerHead);
+        return smallerHead;
     }
 
 }

@@ -2,12 +2,12 @@ import mySingleList.MySingleList;
 
 public class TestList {
 
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
         Solution sol = new Solution();
         System.out.println(sol.findDuplicates(new int[]{1, 3, 3, 2, 2, 1, 4}));
     }
 
-    public static void main4(String[] args) {
+    public static void main(String[] args) {
         MySingleList mySingleList = new MySingleList();
         mySingleList.addLast(3);
         mySingleList.addLast(1);
@@ -26,7 +26,9 @@ public class TestList {
         System.out.println("Size: " + mySingleList.size());
         System.out.println("================");
 
-        System.out.println(mySingleList.chkPalindrome());
+        mySingleList.displayList(mySingleList.partition(2));
+
+//        System.out.println(mySingleList.chkPalindrome());
 
 //        mySingleList.removeAllKey(1);
 //        System.out.print("Display: ");
