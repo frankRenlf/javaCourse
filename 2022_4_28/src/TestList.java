@@ -1,13 +1,49 @@
+import myLinkedList.MyLinkedList;
 import mySingleList.MySingleList;
 
 public class TestList {
 
-    public static void main5(String[] args) {
-        Solution sol = new Solution();
-        System.out.println(sol.findDuplicates(new int[]{1, 3, 3, 2, 2, 1, 4}));
+    public static void main(String[] args) {
+
+        MyLinkedList linkedList2 = new MyLinkedList();
+        linkedList2.addIndex(1,1);
+        linkedList2.addIndex(0,1);
+        linkedList2.addIndex(8,1);
+
+        linkedList2.display();
+
+        System.out.println("size: " + linkedList2.size());
+
+        linkedList2.removeAllKey(1);
+        linkedList2.display();
+        System.out.println("size: " + linkedList2.size());
+
+
     }
 
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
+        MyLinkedList linkedList = new MyLinkedList();
+        int n = 5;
+        while (n > 0) {
+            linkedList.addFirst(n);
+            n--;
+        }
+        linkedList.display();
+
+        System.out.println("size: " + linkedList.size());
+
+        while (n < 5) {
+            linkedList.addLast(n);
+            n++;
+        }
+        linkedList.display();
+
+        System.out.println("size: " + linkedList.size());
+
+    }
+
+
+    public static void main4(String[] args) {
         MySingleList mySingleList = new MySingleList();
         mySingleList.addLast(3);
         mySingleList.addLast(1);
@@ -39,7 +75,6 @@ public class TestList {
 //        mySingleList.clear();
 //        mySingleList.displayList();
 //        System.out.println("================");
-
 
 
     }
