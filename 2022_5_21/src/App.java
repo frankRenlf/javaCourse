@@ -1,5 +1,8 @@
 import structure.BinaryTree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 
     public static void main(String[] args) {
@@ -11,6 +14,10 @@ public class App {
         System.out.println();
         binaryTree.postOrder(root);
 
+        System.out.println();
+        System.out.println(binaryTree.size(root));
+
+        System.out.println(binaryTree.getLeafNodeCount(root));
     }
 
 }
