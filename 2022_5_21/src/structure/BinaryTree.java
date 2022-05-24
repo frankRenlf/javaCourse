@@ -1,5 +1,10 @@
 package structure;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class BinaryTree {
 
     public static class TreeNode {
@@ -119,21 +124,68 @@ public class BinaryTree {
     }
 
     // 检测值为value的元素是否存在
-    TreeNode find(TreeNode root, int val) {
-        if(root==null){
+    public TreeNode find(TreeNode root, int val) {
+        if (root == null) {
             return null;
         }
-        return root;
-
+        if (root.val == val) {
+            return root;
+        }
+        TreeNode ret = find(root.left, val);
+        if (ret != null) {
+            return ret;
+        }
+        ret = find(root.right, val);
+        return ret;
     }
 
     // 层序遍历
-    void levelOrder(TreeNode root) {
+    public void levelOrder(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode tmp = queue.poll();
+            if (tmp.left != null) {
+                queue.add(tmp.left);
+            }
+            if (tmp.right != null) {
+                queue.add(tmp.right);
+            }
+            System.out.println(tmp.val);
+        }
+    }
 
+    public List<List<Character>> writeLevelOrder(TreeNode root) {
+        List<List<Character>> retList = new ArrayList<>();
+        if (root == null) {
+            return retList;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Character> ret = new ArrayList<>();
+            while (size != 0) {
+                TreeNode tmp = queue.poll();
+                ret.add(tmp.val);
+                if (tmp.left != null) {
+                    queue.add(tmp.left);
+                }
+                if (tmp.right != null) {
+                    queue.add(tmp.right);
+                }
+                size--;
+            }
+            retList.add(ret);
+        }
+        return retList;
     }
 
     // 判断一棵树是不是完全二叉树
-    boolean isCompleteTree(TreeNode root) {
+    public boolean isCompleteTree(TreeNode root) {
+        if (root != null) {
+//            if((root.left!=null&&root.right!=null)||())
+        }
         return false;
 
     }
