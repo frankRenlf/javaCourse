@@ -34,8 +34,9 @@ public class BinaryTree {
         B.left = D;
         B.right = E;
 
-        E.left = I;
+//        E.left = I;
         E.right = H;
+        H.left = I;
 
         C.left = F;
         C.right = G;
@@ -99,17 +100,29 @@ public class BinaryTree {
 
     // 子问题思路-求叶子结点个数
     // 获取第K层节点的个数
-    int getKLevelNodeCount(TreeNode root) {
-        return 0;
+    public int getKLevelNodeCount(TreeNode root, int k) {
+        if (root == null) {
+            return 0;
+        }
+        if (k == 1) {
+            return 1;
+        }
+        return getKLevelNodeCount(root.left, k - 1) + getKLevelNodeCount(root.right, k - 1);
     }
 
     // 获取二叉树的高度
-    int getHeight(TreeNode root) {
-        return 0;
+    public int getHeight(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(getHeight(root.left), getHeight(root.right)) + 1;
     }
 
     // 检测值为value的元素是否存在
     TreeNode find(TreeNode root, int val) {
+        if(root==null){
+            return null;
+        }
         return root;
 
     }
