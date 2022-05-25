@@ -22,8 +22,7 @@ public class App {
 //        System.out.println(binaryTree.getKLevelNodeCount(root, 3));
 //        System.out.println(binaryTree.getHeight(root));
 //        System.out.println(binaryTree.find(root, 'i'));
-        System.out.println(binaryTree.writeLevelOrder(root));
+//        System.out.println(binaryTree.writeLevelOrder(root));
+        System.out.println(binaryTree.isCompleteTree(root));
     }
-
-
 }

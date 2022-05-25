@@ -183,11 +183,26 @@ public class BinaryTree {
 
     // 判断一棵树是不是完全二叉树
     public boolean isCompleteTree(TreeNode root) {
-        if (root != null) {
-//            if((root.left!=null&&root.right!=null)||())
+        if (root == null) {
+            return true;
         }
-        return false;
-
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode tmp = queue.poll();
+            if (tmp != null) {
+                queue.offer(tmp.left);
+                queue.offer(tmp.right);
+            } else {
+                break;
+            }
+        }
+        while (!queue.isEmpty()) {
+            if (queue.poll() != null) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
