@@ -22,9 +22,9 @@ public class BinaryTree<E> {
 
 
     int index = 0;
-    public TreeNode<Character> createTree(String dest){
+    public TreeNode<E> createTree(String dest){
         // 根 左子树 右子树
-        TreeNode<Character> root = new TreeNode<>(dest.charAt(index));
+        TreeNode<E> root = new TreeNode(dest.charAt(index));
         index++;
         if(dest.charAt(index) != '#') root.left = createTree(dest);
         index++;
