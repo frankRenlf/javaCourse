@@ -5,53 +5,35 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class BinaryTree {
+public class BinaryTree<E> {
 
-    public static class TreeNode {
-        public char val;
-        public TreeNode left;
-        public TreeNode right;
+    public static class TreeNode<E> {
+        public E val;
+        public TreeNode<E> left;
+        public TreeNode<E> right;
 
-        public TreeNode(char val) {
+        public TreeNode(E val) {
             this.val = val;
 
         }
     }
 
-    public TreeNode root;
+    public TreeNode<E> root;
 
 
-    public TreeNode createBinaryTree() {
-
-        TreeNode A = new TreeNode('A');
-        TreeNode B = new TreeNode('B');
-        TreeNode C = new TreeNode('C');
-        TreeNode D = new TreeNode('D');
-        TreeNode E = new TreeNode('E');
-        TreeNode F = new TreeNode('F');
-        TreeNode G = new TreeNode('G');
-        TreeNode H = new TreeNode('H');
-        TreeNode I = new TreeNode('I');
-
-        A.left = B;
-        A.right = C;
-
-        B.left = D;
-        B.right = E;
-
-//        E.left = I;
-        E.right = H;
-        H.left = I;
-
-        C.left = F;
-        C.right = G;
-        root = A;
-
+    int index = 0;
+    public TreeNode<Character> createTree(String dest){
+        // 根 左子树 右子树
+        TreeNode<Character> root = new TreeNode<>(dest.charAt(index));
+        index++;
+        if(dest.charAt(index) != '#') root.left = createTree(dest);
+        index++;
+        if(dest.charAt(index) != '#') root.right = createTree(dest);
         return root;
     }
 
     // 前序遍历
-    public void preOrder(TreeNode root) {
+    public void preOrder(TreeNode<E> root) {
         if (root == null) {
             return;
         }
@@ -61,7 +43,7 @@ public class BinaryTree {
     }
 
     // 中序遍历
-    public void inOrder(TreeNode root) {
+    public void inOrder(TreeNode<E> root) {
         if (root == null) {
             return;
         }
@@ -71,7 +53,7 @@ public class BinaryTree {
     }
 
     // 后序遍历
-    public void postOrder(TreeNode root) {
+    public void postOrder(TreeNode<E> root) {
         if (root == null) {
             return;
         }
@@ -81,7 +63,7 @@ public class BinaryTree {
     }
 
     // 获取树中节点的个数
-    public int size(TreeNode root) {
+    public int size(TreeNode<E> root) {
         int countSize = 0;
         if (root == null) {
             return 0;
@@ -93,7 +75,7 @@ public class BinaryTree {
     }
 
     // 获取叶子节点的个数
-    public int getLeafNodeCount(TreeNode root) {
+    public int getLeafNodeCount(TreeNode<E> root) {
 //        int countLeaf = 0;
         if (root == null) {
             return 0;
@@ -105,7 +87,7 @@ public class BinaryTree {
 
     // 子问题思路-求叶子结点个数
     // 获取第K层节点的个数
-    public int getKLevelNodeCount(TreeNode root, int k) {
+    public int getKLevelNodeCount(TreeNode<E> root, int k) {
         if (root == null) {
             return 0;
         }
@@ -116,7 +98,7 @@ public class BinaryTree {
     }
 
     // 获取二叉树的高度
-    public int getHeight(TreeNode root) {
+    public int getHeight(TreeNode<E> root) {
         if (root == null) {
             return 0;
         }
@@ -124,14 +106,14 @@ public class BinaryTree {
     }
 
     // 检测值为value的元素是否存在
-    public TreeNode find(TreeNode root, int val) {
+    public TreeNode<E> find(TreeNode<E> root, E val) {
         if (root == null) {
             return null;
         }
         if (root.val == val) {
             return root;
         }
-        TreeNode ret = find(root.left, val);
+        TreeNode<E> ret = find(root.left, val);
         if (ret != null) {
             return ret;
         }
@@ -140,11 +122,11 @@ public class BinaryTree {
     }
 
     // 层序遍历
-    public void levelOrder(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
+    public void levelOrder(TreeNode<E> root) {
+        Queue<TreeNode<E>> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            TreeNode tmp = queue.poll();
+            TreeNode<E> tmp = queue.poll();
             if (tmp.left != null) {
                 queue.add(tmp.left);
             }
@@ -155,18 +137,19 @@ public class BinaryTree {
         }
     }
 
-    public List<List<Character>> writeLevelOrder(TreeNode root) {
-        List<List<Character>> retList = new ArrayList<>();
+    public List<List<E>> writeLevelOrder(TreeNode<E> root) {
+        List<List<E>> retList = new ArrayList<>();
         if (root == null) {
             return retList;
         }
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode<E>> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
-            List<Character> ret = new ArrayList<>();
+            List<E> ret = new ArrayList<>();
             while (size != 0) {
-                TreeNode tmp = queue.poll();
+                TreeNode<E> tmp = queue.poll();
+
                 ret.add(tmp.val);
                 if (tmp.left != null) {
                     queue.add(tmp.left);
@@ -182,14 +165,14 @@ public class BinaryTree {
     }
 
     // 判断一棵树是不是完全二叉树
-    public boolean isCompleteTree(TreeNode root) {
+    public boolean isCompleteTree(TreeNode<E> root) {
         if (root == null) {
             return true;
         }
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode<E>> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
-            TreeNode tmp = queue.poll();
+            TreeNode<E> tmp = queue.poll();
             if (tmp != null) {
                 queue.offer(tmp.left);
                 queue.offer(tmp.right);

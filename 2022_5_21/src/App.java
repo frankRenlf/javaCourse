@@ -6,8 +6,8 @@ import java.util.List;
 public class App {
 
     public static void main(String[] args) {
-        BinaryTree binaryTree = new BinaryTree();
-        BinaryTree.TreeNode root = binaryTree.createBinaryTree();
+        BinaryTree<Character> binaryTree = new BinaryTree<>();
+        BinaryTree.TreeNode<Character> root = binaryTree.createTree("abc##de#g##f###");
 //        binaryTree.preOrder(root);
 //        System.out.println();
 //        binaryTree.inOrder(root);
@@ -23,6 +23,8 @@ public class App {
 //        System.out.println(binaryTree.getHeight(root));
 //        System.out.println(binaryTree.find(root, 'i'));
 //        System.out.println(binaryTree.writeLevelOrder(root));
-        System.out.println(binaryTree.isCompleteTree(root));
+        binaryTree.inOrder(root);
+        System.out.println();
+        System.out.println(binaryTree.find(root,'x'));
     }
 }
