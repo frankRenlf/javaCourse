@@ -1,3 +1,8 @@
+import structure.TestHeap;
+import structure.TestHeap_E;
+
+import java.util.HashMap;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -11,4 +16,19 @@
  * @Description :
  */
 public class App {
+
+    public static void main(String[] args) {
+        TestHeap testHeap = new TestHeap(10);
+        testHeap.createHeap(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9});
+        testHeap.display();
+
+    }
+
+    public static void main1(String[] args) {
+        Integer[] array = new Integer[]{1, 3, 5, 6, 6, 7, 8, 9, 10, 12};
+        TestHeap_E<Integer> testHeap = new TestHeap_E<>(Integer.class);
+        testHeap.createHeap(array);
+        testHeap.display();
+    }
+
 }
