@@ -20,6 +20,7 @@ public class App {
     public static void main(String[] args) {
         TestHeap testHeap = new TestHeap(10);
         testHeap.createHeap(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9});
+        testHeap.push(50);
         testHeap.display();
 
     }

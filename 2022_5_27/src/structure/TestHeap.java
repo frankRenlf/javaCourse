@@ -1,6 +1,7 @@
 package structure;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 /**
  * Created with IntelliJ IDEA.
@@ -48,6 +49,39 @@ public class TestHeap {
         for (int p = (usedSize - 1 - 1) / 2; p >= 0; p--) {
             shiftDown(p, usedSize);
         }
+    }
+
+    private void shiftUp(int child) {
+        int parent = (child - 1) / 2;
+
+        while (child > 0) {
+            if (elem[child] > elem[parent]) {
+                int tmp = elem[child];
+                elem[child] = elem[parent];
+                elem[parent] = tmp;
+                child = parent;
+                parent = (child - 1) / 2;
+            } else {
+                break;
+            }
+        }
+    }
+
+    public void push(int val) {
+        if (checkCapacity()) {
+            expansion();
+        }
+        elem[usedSize] = val;
+        shiftUp(usedSize);
+        usedSize++;
+    }
+
+    public void expansion() {
+        elem = Arrays.copyOf(elem, usedSize * 2);
+    }
+
+    public boolean checkCapacity() {
+        return usedSize == elem.length;
     }
 
     public void display() {
