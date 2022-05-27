@@ -17,8 +17,8 @@ import java.util.Arrays;
  */
 public class TestHeap {
 
-    public int[] elem;
-    public int usedSize;
+    private int[] elem;
+    private int usedSize;
 
     public TestHeap(int capacity) {
         this.elem = new int[capacity];
@@ -82,6 +82,29 @@ public class TestHeap {
 
     public boolean checkCapacity() {
         return usedSize == elem.length;
+    }
+
+    public void pollHeap() {
+        if (isEmpty()) {
+            System.out.println();
+            return;
+        }
+        int tmp = elem[usedSize - 1];
+        elem[usedSize - 1] = elem[0];
+        elem[0] = tmp;
+        shiftDown(0, usedSize - 1);
+        usedSize--;
+    }
+
+    public boolean isEmpty() {
+        return usedSize == 0;
+    }
+
+    public int peekHeap() {
+        if (isEmpty()) {
+            return -1;
+        }
+        return elem[0];
     }
 
     public void display() {

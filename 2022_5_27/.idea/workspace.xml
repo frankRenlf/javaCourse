@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/2022_5_27/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_5_27/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/2022_5_27/structure/TestHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_5_27/structure/TestHeap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/structure/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/PriorityQueueTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/structure/TestHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/TestHeap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/11195/IdeaProjects/javaCourse/2022_5_27",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -67,7 +69,8 @@
       <updated>1653618853554</updated>
       <workItem from="1653618855173" duration="432000" />
       <workItem from="1653623323491" duration="1099000" />
-      <workItem from="1653624448081" duration="7964000" />
+      <workItem from="1653624448081" duration="7968000" />
+      <workItem from="1653655804115" duration="2004000" />
     </task>
     <servers />
   </component>

@@ -12,8 +12,6 @@ package structure;
  * @github : <a href="https://github.com/frankRenlf?tab=overview&from=2022-04-01&to=2022-04-30">...</a>
  * @Description :
  */
-public class PriorityQueue {
-
-
+public class PriorityQueueTest {
 
 }
