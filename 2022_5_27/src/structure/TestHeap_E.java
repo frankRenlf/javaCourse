@@ -33,22 +33,13 @@ public class TestHeap_E<E> {
     }
 
 
+
     private final Comparator<? super E> comparator;
 
     public int compareTo(E o1, E o2) {
         return (int) o1 - (int) o2;
     }
 
-
-//    private void shiftDown(int root, int len) {
-//        int par = root;
-//        int chi = 2 * par + 1;
-//        while (chi < len) {
-//            if (chi + 1 < len && compareTo(elem[chi], elem[par]) > 0) {
-//
-//            }
-//        }
-//    }
 
     private void shiftDown(int root, int len) {
         int parent = root;
