@@ -2,7 +2,7 @@
 import structure.TestHeap;
 import structure.TestHeap_E;
 
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -19,7 +19,11 @@ import java.util.PriorityQueue;
  */
 public class App {
 
-    public static void main(String[] args) {
+    public static void main4(String[] args) {
+
+    }
+
+    public static void main3(String[] args) {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
 
     }
@@ -33,9 +37,16 @@ public class App {
 
     }
 
-    public static void main1(String[] args) {
+
+    public static void main(String[] args) {
         Integer[] array = new Integer[]{1, 3, 5, 6, 6, 7, 8, 9, 10, 12};
-        TestHeap_E<Integer> testHeap = new TestHeap_E<>(Integer.class);
+        Comparator<? super Integer> comparator = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1 - o2;
+            }
+        };
+        TestHeap_E<Integer> testHeap = new TestHeap_E<>(Integer.class, comparator);
         testHeap.createHeap(array);
         testHeap.display();
     }
