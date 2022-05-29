@@ -1,7 +1,9 @@
 
+import leetcode.Solution;
 import structure.TestHeap;
 import structure.TestHeap_E;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -49,6 +51,12 @@ class Student implements Comparable<Student> {
 public class App {
 
     public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(Arrays.toString(sol.smallestK2(new int[]{9,2, 1, 3, 5, 7, 8}, 3)));
+        ;
+    }
+
+    public static void main4(String[] args) {
         PriorityQueue<Student> priorityQueue = new PriorityQueue<>();
         priorityQueue.offer(new Student(12));
         priorityQueue.offer(new Student(10));
