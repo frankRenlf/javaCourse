@@ -50,7 +50,7 @@ class Student implements Comparable<Student> {
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main5(String[] args) {
         Solution sol = new Solution();
         System.out.println(Arrays.toString(sol.smallestK2(new int[]{9,2, 1, 3, 5, 7, 8}, 3)));
         ;
@@ -76,11 +76,13 @@ public class App {
 
     }
 
-    public static void main2(String[] args) {
+    public static void main(String[] args) {
         TestHeap testHeap = new TestHeap(10);
         testHeap.createHeap(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9});
         testHeap.push(50);
         testHeap.pollHeap();
+        testHeap.display();
+        testHeap.heapSort();
         testHeap.display();
 
     }

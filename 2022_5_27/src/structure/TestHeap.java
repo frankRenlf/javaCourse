@@ -111,6 +111,19 @@ public class TestHeap {
         for (int i = 0; i < usedSize; i++) {
             System.out.print(elem[i] + " ");
         }
+        System.out.println();
+    }
+
+    public void heapSort() {
+        int end = usedSize - 1;
+        while (end > 0) {
+            int tmp = elem[0];
+            elem[0] = elem[end];
+            elem[end] = tmp;
+            shiftDown(0, end);
+            end--;
+
+        }
     }
 
 }

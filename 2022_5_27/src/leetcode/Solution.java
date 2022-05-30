@@ -40,15 +40,19 @@ public class Solution {
 
     public int[] smallestK2(int[] arr, int k) {
         int[] ret = new int[k];
+        if (k == 0) {
+            return ret;
+        }
         IntCmp intCmp = new IntCmp();
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k, intCmp);
-        for (int i = 0; i < k; i++) {
-            priorityQueue.offer(arr[i]);
-        }
-        for (int i = k; i < arr.length; i++) {
-            if (arr[i] < priorityQueue.peek()) {
-                priorityQueue.poll();
+        for (int i = 0; i < arr.length; i++) {
+            if (priorityQueue.size() < k) {
                 priorityQueue.offer(arr[i]);
+            } else {
+                if (priorityQueue.peek() > arr[i]) {
+                    priorityQueue.poll();
+                    priorityQueue.offer(arr[i]);
+                }
             }
         }
         for (int i = 0; i < k; i++) {
