@@ -14,6 +14,29 @@ package function;
  */
 public class Sorts {
 
+    private void shell(int[] arr, int gap) {
+        int len = arr.length;
+        for (int i = gap; i < len; i++) {
+            int tmp = arr[i];
+            for (int j = i - gap; j >= 0; j -= gap) {
+                if (arr[j] > tmp) {
+                    arr[j + gap] = arr[j];
+                } else {
+                    arr[j + gap] = tmp;
+                    break;
+                }
+            }
+        }
+    }
+
+    public void shellSort(int[] arr) {
+        int gap = arr.length;
+        while (gap > 1) {
+            shell(arr, gap);
+            gap /= 2;
+        }
+        shell(arr, 1);
+    }
 
     public void insertSort(int[] arr) {
         int len = arr.length;
