@@ -14,6 +14,56 @@ package function;
  */
 public class Sorts {
 
+    public void bubbleSort(int[] arr) {
+        int len = arr.length;
+        for (int i = 0; i < len - 1; i++) {
+            for (int j = i + 1; j < len; j++) {
+                if (arr[i] > arr[j]) {
+                    swap(arr, i, j);
+                }
+            }
+        }
+    }
+
+    private void shiftDown(int[] arr, int root, int len) {
+        int parent = root;
+        int child = parent * 2 + 1;
+        while (child < len) {
+            if (child + 1 < len && arr[child] < arr[child + 1]) {
+                child++;
+            }
+            if (arr[child] > arr[parent]) {
+                swap(arr, child, parent);
+                parent = child;
+                child = 2 * parent + 1;
+            } else {
+                break;
+            }
+        }
+    }
+
+    private void swap(int[] arr, int i, int j) {
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+
+    private void createHeap(int[] arr) {
+        for (int p = (arr.length - 1 - 1) / 2; p >= 0; p--) {
+            shiftDown(arr, p, arr.length);
+        }
+    }
+
+    public void heapSort(int[] arr) {
+        createHeap(arr);
+        int end = arr.length - 1;
+        while (end >= 0) {
+            swap(arr, 0, end);
+            shiftDown(arr, 0, end);
+            end--;
+        }
+    }
+
     public void selectSort(int[] arr) {
         int len = arr.length;
         for (int i = 0; i < len - 1; i++) {

@@ -19,7 +19,7 @@ public class App {
     public static void main(String[] args) {
         int[] arr = new int[]{1,5,2,3,7,4,5};
         Sorts sorts = new Sorts();
-        sorts.selectSort(arr);
+        sorts.bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
