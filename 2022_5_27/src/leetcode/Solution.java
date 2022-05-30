@@ -31,7 +31,7 @@ public class Solution {
         return ret;
     }
 
-    class IntCmp implements Comparator<Integer> {
+    static class IntCmp implements Comparator<Integer> {
         @Override
         public int compare(Integer o1, Integer o2) {
             return o2 - o1;
@@ -41,7 +41,7 @@ public class Solution {
     public int[] smallestK2(int[] arr, int k) {
         int[] ret = new int[k];
         IntCmp intCmp = new IntCmp();
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(intCmp);
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k, intCmp);
         for (int i = 0; i < k; i++) {
             priorityQueue.offer(arr[i]);
         }
