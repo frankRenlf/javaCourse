@@ -1,0 +1,33 @@
+package function;
+
+/**
+ * Created with IntelliJ IDEA.
+ *
+ * @author : Frank.Ren
+ * @version : 1.0
+ * @Project : 2022_5_30
+ * @Package : function
+ * @createTime : 2022/5/30 14:34
+ * @Email : sc19lr@leeds.ac.uk
+ * @github : https://github.com/frankRenlf?tab=overview&from=2022-04-01&to=2022-04-30
+ * @Description :
+ */
+public class Sorts {
+
+
+    public void insertSort(int[] arr) {
+        int len = arr.length;
+        for (int i = 1; i < len; i++) {
+            int tmp = arr[i];
+            for (int j = i - 1; j >= 0; j--) {
+                if (arr[j] > tmp) {
+                    arr[j + 1] = arr[j];
+                } else {
+                    arr[j + 1] = tmp;
+                    break;
+                }
+            }
+        }
+    }
+
+}
