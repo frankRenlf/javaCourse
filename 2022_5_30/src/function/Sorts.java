@@ -14,6 +14,21 @@ package function;
  */
 public class Sorts {
 
+    public void selectSort(int[] arr) {
+        int len = arr.length;
+        for (int i = 0; i < len - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < len; j++) {
+                if (arr[minIndex] > arr[j]) {
+                    minIndex = j;
+                }
+            }
+            int tmp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = tmp;
+        }
+    }
+
     private void shell(int[] arr, int gap) {
         int len = arr.length;
         for (int i = gap; i < len; i++) {
