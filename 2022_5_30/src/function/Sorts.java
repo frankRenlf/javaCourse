@@ -14,7 +14,7 @@ package function;
  */
 public class Sorts {
 
-    public void qSort(int[] arr, int left, int right) {
+    private void qSort(int[] arr, int left, int right) {
         if (left >= right) {
             return;
         }
@@ -44,7 +44,7 @@ public class Sorts {
         return l;
     }
 
-    public int partitionDig(int[] arr, int left, int right) {
+    private int partitionDig(int[] arr, int left, int right) {
         int l = left;
         int r = right;
         int pivot = arr[l];
