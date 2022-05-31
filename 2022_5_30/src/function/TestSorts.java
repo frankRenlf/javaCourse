@@ -62,7 +62,7 @@ public class TestSorts {
         int[] arr = copyArray(array);
         long startTime = System.currentTimeMillis();
         Sorts sorts = new Sorts();
-        sorts.quickSort(arr, 0, arr.length - 1);
+        sorts.quickSort(arr);
         long endTime = System.currentTimeMillis();
         System.out.println("Time consume: " + (endTime - startTime));
 

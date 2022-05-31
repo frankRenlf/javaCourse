@@ -14,17 +14,20 @@ package function;
  */
 public class Sorts {
 
-
-    public void quickSort(int[] arr, int left, int right) {
+    public void qSort(int[] arr, int left, int right) {
         if (left >= right) {
             return;
         }
-        int div = partition(arr, left, right);
-        quickSort(arr, left, div - 1);
-        quickSort(arr, div + 1, right);
+        int div = partitionDig(arr, left, right);
+        qSort(arr, left, div - 1);
+        qSort(arr, div + 1, right);
     }
 
-    private int partition(int[] arr, int left, int right) {
+    public void quickSort(int[] arr) {
+        qSort(arr, 0, arr.length - 1);
+    }
+
+    private int partitionHoare(int[] arr, int left, int right) {
         int l = left;
         int r = right;
         int pivot = arr[left];
@@ -38,6 +41,24 @@ public class Sorts {
             swap(arr, l, r);
         }
         swap(arr, l, left);
+        return l;
+    }
+
+    public int partitionDig(int[] arr, int left, int right) {
+        int l = left;
+        int r = right;
+        int pivot = arr[l];
+        while (l < r) {
+            while (l < r && pivot <= arr[r]) {
+                r--;
+            }
+            arr[l] = arr[r];
+            while (l < r && pivot >= arr[l]) {
+                l++;
+            }
+            arr[r] = arr[l];
+        }
+        arr[l] = pivot;
         return l;
     }
 

@@ -20,7 +20,7 @@ public class App {
 
 
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
 //        Arrays.sort();
         TestSorts testSorts = new TestSorts();
         testSorts.testQuickSort();
@@ -28,10 +28,10 @@ public class App {
         testSorts.testHeapSort();
     }
 
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         int[] arr = new int[]{1, 5, 2, 3, 7, 4, 5};
         Sorts sorts = new Sorts();
-        sorts.quickSort(arr, 0, arr.length-1);
+        sorts.quickSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
