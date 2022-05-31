@@ -2,7 +2,6 @@ import function.Sorts;
 import function.TestSorts;
 
 import java.util.Arrays;
-import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,19 +18,19 @@ import java.util.Random;
 public class App {
 
 
-
     public static void main2(String[] args) {
 //        Arrays.sort();
         TestSorts testSorts = new TestSorts();
-        testSorts.testQuickSort();
-        testSorts.testShellSort();
-        testSorts.testHeapSort();
+        testSorts.testQuickSortOriginal();
+        testSorts.testQuickSortImproveWithInsert();
+//        testSorts.testShellSort();
+//        testSorts.testHeapSort();
     }
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 5, 2, 3, 7, 4, 5};
         Sorts sorts = new Sorts();
-        sorts.quickSort(arr);
+        sorts.quickSortOriginal(arr);
         System.out.println(Arrays.toString(arr));
     }
 

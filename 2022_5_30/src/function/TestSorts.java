@@ -24,10 +24,11 @@ public class TestSorts {
     }
 
     public int[] createArray() {
-        array = new int[10_0000];
+        array = new int[1_0000];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(10_0000);
+//            array[i] = i;
+            array[i] = random.nextInt(1_0000);
         }
         return array;
     }
@@ -54,17 +55,24 @@ public class TestSorts {
         sorts.shellSort(arr);
         long endTime = System.currentTimeMillis();
         System.out.println("Time consume: " + (endTime - startTime));
-
     }
 
 
-    public void testQuickSort() {
+    public void testQuickSortOriginal() {
         int[] arr = copyArray(array);
         long startTime = System.currentTimeMillis();
         Sorts sorts = new Sorts();
-        sorts.quickSort(arr);
+        sorts.quickSortOriginal(arr);
         long endTime = System.currentTimeMillis();
         System.out.println("Time consume: " + (endTime - startTime));
+    }
 
+    public void testQuickSortImproveWithInsert() {
+        int[] arr = copyArray(array);
+        long startTime = System.currentTimeMillis();
+        Sorts sorts = new Sorts();
+        sorts.quickSortImproveWithInsert(arr);
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time consume: " + (endTime - startTime));
     }
 }

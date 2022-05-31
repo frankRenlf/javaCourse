@@ -14,17 +14,48 @@ package function;
  */
 public class Sorts {
 
-    private void qSort(int[] arr, int left, int right) {
+    private void insertSortRange(int[] arr, int start, int end) {
+        for (int i = start + 1; i <= end; i++) {
+            int tmp = arr[i];
+            for (int j = i - 1; j >= start; j--) {
+                if (arr[j] > tmp) {
+                    arr[j + 1] = arr[j];
+                } else {
+                    arr[j + 1] = tmp;
+                    break;
+                }
+            }
+        }
+    }
+
+    private void qSortOriginal(int[] arr, int left, int right) {
         if (left >= right) {
             return;
         }
-        int div = partitionDig(arr, left, right);
-        qSort(arr, left, div - 1);
-        qSort(arr, div + 1, right);
+        int div = partitionTwoPoints1(arr, left, right);
+        qSortOriginal(arr, left, div - 1);
+        qSortOriginal(arr, div + 1, right);
     }
 
-    public void quickSort(int[] arr) {
-        qSort(arr, 0, arr.length - 1);
+    private void qSortImproveWithInsert(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        if (right - left + 1 <= 100) {
+            insertSortRange(arr, left, right);
+            return;
+        }
+        int div = partitionTwoPoints2(arr, left, right);
+        qSortImproveWithInsert(arr, left, div - 1);
+        qSortImproveWithInsert(arr, div + 1, right);
+    }
+
+    public void quickSortImproveWithInsert(int[] arr) {
+        qSortImproveWithInsert(arr, 0, arr.length - 1);
+    }
+
+    public void quickSortOriginal(int[] arr) {
+        qSortOriginal(arr, 0, arr.length - 1);
     }
 
     private int partitionHoare(int[] arr, int left, int right) {
@@ -43,6 +74,34 @@ public class Sorts {
         swap(arr, l, left);
         return l;
     }
+
+    private int partitionTwoPoints1(int[] arr, int left, int right) {
+        int pre = left;
+        int cur = left + 1;
+        int pivot = arr[left];
+        while (cur <= right) {
+            if (arr[cur] < pivot && arr[++pre] != pivot) {
+                swap(arr, pre, cur);
+            }
+            cur++;
+        }
+        swap(arr, pre, left);
+        return pre;
+    }
+
+    private int partitionTwoPoints2(int[] arr, int left, int right) {
+        int pre = left + 1;
+        int pivot = arr[left];
+        for (int i = left + 1; i <= right; i++) {
+            if (arr[i] < pivot) {
+                swap(arr, i, pre);
+                pre++;
+            }
+        }
+        swap(arr, pre - 1, left);
+        return pre - 1;
+    }
+
 
     private int partitionDig(int[] arr, int left, int right) {
         int l = left;
