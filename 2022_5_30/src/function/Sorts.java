@@ -14,6 +14,33 @@ package function;
  */
 public class Sorts {
 
+
+    public void quickSort(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int div = partition(arr, left, right);
+        quickSort(arr, left, div - 1);
+        quickSort(arr, div + 1, right);
+    }
+
+    private int partition(int[] arr, int left, int right) {
+        int l = left;
+        int r = right;
+        int pivot = arr[left];
+        while (l < r) {
+            while (l < r && pivot <= arr[r]) {
+                r--;
+            }
+            while (l < r && pivot >= arr[l]) {
+                l++;
+            }
+            swap(arr, l, r);
+        }
+        swap(arr, l, left);
+        return l;
+    }
+
     public void bubbleSort(int[] arr) {
         int len = arr.length;
         for (int i = 0; i < len - 1; i++) {

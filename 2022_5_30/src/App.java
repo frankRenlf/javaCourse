@@ -37,9 +37,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-//        int[] arr = new int[]{1, 5, 2, 3, 7, 4, 5};
-//        System.out.println(Arrays.toString(arr));
-        testSort();
+        int[] arr = new int[]{1, 5, 2, 3, 7, 4, 5};
+        Sorts sorts = new Sorts();
+        sorts.quickSort(arr, 0, arr.length-1);
+        System.out.println(Arrays.toString(arr));
+//        testSort();
     }
 
 }
