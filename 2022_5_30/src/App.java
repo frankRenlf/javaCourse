@@ -1,6 +1,7 @@
 import function.Sorts;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,11 +17,29 @@ import java.util.Arrays;
  */
 public class App {
 
-    public static void main(String[] args) {
-        int[] arr = new int[]{1,5,2,3,7,4,5};
+    public static int[] createArray() {
+        int[] arr = new int[10_0000];
+        Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(10_0000);
+        }
+        return arr;
+    }
+
+    public static void testSort() {
+        int[] arr = createArray();
+        long startTime = System.currentTimeMillis();
         Sorts sorts = new Sorts();
-        sorts.bubbleSort(arr);
-        System.out.println(Arrays.toString(arr));
+        sorts.heapSort(arr);
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time consume: " + (endTime - startTime));
+
+    }
+
+    public static void main(String[] args) {
+//        int[] arr = new int[]{1, 5, 2, 3, 7, 4, 5};
+//        System.out.println(Arrays.toString(arr));
+        testSort();
     }
 
 }

@@ -118,4 +118,8 @@ public class Sorts {
         }
     }
 
+    public void start(int[] arr) {
+        System.out.println("hello");
+    }
+
 }
