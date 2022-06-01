@@ -37,7 +37,7 @@ class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student o) {
-        return this.age - o.age;
+        return o.age - this.age;
     }
 
     @Override
@@ -52,13 +52,13 @@ public class App {
 
     public static void main5(String[] args) {
         Solution sol = new Solution();
-        System.out.println(Arrays.toString(sol.smallestK2(new int[]{9,2, 1, 3, 5, 7, 8}, 3)));
+        System.out.println(Arrays.toString(sol.smallestK2(new int[]{9, 2, 1, 3, 5, 7, 8}, 3)));
         ;
     }
 
-    public static void main4(String[] args) {
+    public static void main(String[] args) {
         PriorityQueue<Student> priorityQueue = new PriorityQueue<>();
-        priorityQueue.offer(new Student(12));
+        priorityQueue.offer(new Student(7));
         priorityQueue.offer(new Student(10));
         priorityQueue.offer(new Student(9));
         System.out.println(priorityQueue.toString());
@@ -68,15 +68,20 @@ public class App {
 
     public static void main3(String[] args) {
         IntCmp intCmp = new IntCmp();
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(intCmp);
-        priorityQueue.offer(1);
-        priorityQueue.offer(2);
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return (int) o1 - (int) o2;
+            }
+        });
+        priorityQueue.offer(5);
         priorityQueue.offer(3);
+        priorityQueue.offer(2);
         System.out.println(priorityQueue.toString());
 
     }
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         TestHeap testHeap = new TestHeap(10);
         testHeap.createHeap(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9});
         testHeap.push(50);

@@ -23,7 +23,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/11195/IdeaProjects/javaCourse/2022_5_27",
+    "last_opened_file_path": "C:/Users/11195/IdeaProjects/javaCourse/2022_5_28",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -36,6 +39,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653738040590</updated>
       <workItem from="1653738042255" duration="613000" />
+      <workItem from="1654072306928" duration="8000" />
     </task>
     <servers />
   </component>
