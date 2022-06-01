@@ -80,7 +80,7 @@ public class Sorts {
         int cur = left + 1;
         int pivot = arr[left];
         while (cur <= right) {
-            if (arr[cur] < pivot && arr[++pre] != pivot) {
+            if (arr[cur] < pivot && arr[++pre] != arr[cur]) {
                 swap(arr, pre, cur);
             }
             cur++;
