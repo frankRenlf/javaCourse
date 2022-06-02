@@ -23,12 +23,9 @@ public class Sorts {
         int index = 0;
         while (s1 <= mid || s2 <= right) {
             if (arr[s1] > arr[s2]) {
-                tmp[index] = arr[s2];
-                index++;
-                s2++;
+                tmp[index++] = arr[s2++];
             } else {
-                tmp[index] = arr[s1];
-                s1++;
+                tmp[index++] = arr[s1++];
             }
         }
         for (int x : tmp) {
