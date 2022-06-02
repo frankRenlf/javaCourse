@@ -18,7 +18,7 @@ import java.util.Arrays;
 public class App {
 
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
 //        Arrays.sort();
         TestSorts testSorts = new TestSorts();
         testSorts.testInsertSort();
@@ -31,10 +31,10 @@ public class App {
 
     }
 
-    public static void main1(String[] args) {
-        int[] arr = new int[]{3, 1, 3, 1, 4, 5, 2, 3, 7, 4, 5};
+    public static void main(String[] args) {
+        int[] arr = new int[]{3, 1, 3, 1, 4, 5, 2, 0, 7, 4, 5};
         Sorts sorts = new Sorts();
-        sorts.quickSortWithoutRec(arr);
+        sorts.mergeSortWhile(arr);
         System.out.println(Arrays.toString(arr));
     }
 

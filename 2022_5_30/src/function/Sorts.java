@@ -21,16 +21,43 @@ public class Sorts {
         int s2 = mid + 1;
         int[] tmp = new int[right - left + 1];
         int index = 0;
-        while (s1 <= mid || s2 <= right) {
+        while (s1 <= mid && s2 <= right) {
             if (arr[s1] > arr[s2]) {
                 tmp[index++] = arr[s2++];
             } else {
                 tmp[index++] = arr[s1++];
             }
         }
+        while (s1 <= mid) {
+            tmp[index++] = arr[s1++];
+        }
+        while (s2 <= right) {
+            tmp[index++] = arr[s2++];
+        }
         for (int x : tmp) {
-            arr[left] = x;
-            left++;
+            arr[left++] = x;
+        }
+    }
+
+    private void mSortWhile(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        Stack<Integer> stack = new Stack<>();
+        stack.push(right);
+        stack.push(left);
+        while (!stack.isEmpty()) {
+            left = stack.pop();
+            right = stack.pop();
+            if (right <= left) {
+                continue;
+            }
+            int mid = left + ((right - left) >>> 1);
+            merge(arr, left, mid, right);
+            stack.push(right);
+            stack.push(mid + 1);
+            stack.push(mid);
+            stack.push(left);
         }
     }
 
@@ -38,10 +65,14 @@ public class Sorts {
         if (left >= right) {
             return;
         }
-        int mid = left + (right - left) >>> 1;
+        int mid = left + ((right - left) >>> 1);
         mSort(arr, left, mid);
         mSort(arr, mid + 1, right);
         merge(arr, left, mid, right);
+    }
+
+    public void mergeSortWhile(int[] arr) {
+        mSortWhile(arr, 0, arr.length - 1);
     }
 
     public void mergeSort(int[] arr) {
