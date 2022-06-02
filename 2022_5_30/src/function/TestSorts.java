@@ -27,8 +27,8 @@ public class TestSorts {
         array = new int[1_0000];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-//            array[i] = i;
-            array[i] = random.nextInt(1_0000);
+            array[i] = i;
+//            array[i] = random.nextInt(10_0000);
         }
         return array;
     }
@@ -38,14 +38,22 @@ public class TestSorts {
         return Arrays.copyOf(arr, array.length);
     }
 
+    public void testInsertSort() {
+        int[] arr = copyArray(array);
+        long startTime = System.currentTimeMillis();
+        Sorts sorts = new Sorts();
+        sorts.insertSort(arr);
+        long endTime = System.currentTimeMillis();
+        System.out.println("testHeapSort: " + (endTime - startTime));
+    }
+
     public void testHeapSort() {
         int[] arr = copyArray(array);
         long startTime = System.currentTimeMillis();
         Sorts sorts = new Sorts();
         sorts.heapSort(arr);
         long endTime = System.currentTimeMillis();
-        System.out.println("Time consume: " + (endTime - startTime));
-
+        System.out.println("testHeapSort: " + (endTime - startTime));
     }
 
     public void testShellSort() {
@@ -54,7 +62,16 @@ public class TestSorts {
         Sorts sorts = new Sorts();
         sorts.shellSort(arr);
         long endTime = System.currentTimeMillis();
-        System.out.println("Time consume: " + (endTime - startTime));
+        System.out.println("testShellSort: " + (endTime - startTime));
+    }
+
+    public void testBubbleSort() {
+        int[] arr = copyArray(array);
+        long startTime = System.currentTimeMillis();
+        Sorts sorts = new Sorts();
+        sorts.bubbleSort(arr);
+        long endTime = System.currentTimeMillis();
+        System.out.println("testBubbleSort: " + (endTime - startTime));
     }
 
 
@@ -64,15 +81,15 @@ public class TestSorts {
         Sorts sorts = new Sorts();
         sorts.quickSortOriginal(arr);
         long endTime = System.currentTimeMillis();
-        System.out.println("Time consume: " + (endTime - startTime));
+        System.out.println("testQuickSortOriginal: " + (endTime - startTime));
     }
 
-    public void testQuickSortImproveWithInsert() {
+    public void testQuickSortImproved() {
         int[] arr = copyArray(array);
         long startTime = System.currentTimeMillis();
         Sorts sorts = new Sorts();
-        sorts.quickSortImproveWithInsert(arr);
+        sorts.quickSortImproved(arr);
         long endTime = System.currentTimeMillis();
-        System.out.println("Time consume: " + (endTime - startTime));
+        System.out.println("testQuickSortImproved: " + (endTime - startTime));
     }
 }

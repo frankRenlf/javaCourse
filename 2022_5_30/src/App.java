@@ -21,16 +21,20 @@ public class App {
     public static void main2(String[] args) {
 //        Arrays.sort();
         TestSorts testSorts = new TestSorts();
-        testSorts.testQuickSortOriginal();
-        testSorts.testQuickSortImproveWithInsert();
+        testSorts.testInsertSort();
+        testSorts.testHeapSort();
+        testSorts.testShellSort();
+        testSorts.testBubbleSort();
+//        testSorts.testQuickSortOriginal();
+        testSorts.testQuickSortImproved();
 //        testSorts.testShellSort();
 //        testSorts.testHeapSort();
     }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         int[] arr = new int[]{3, 1, 3, 1, 4, 5, 2, 3, 7, 4, 5};
         Sorts sorts = new Sorts();
-        sorts.quickSortOriginal(arr);
+        sorts.quickSortImproved(arr);
         System.out.println(Arrays.toString(arr));
     }
 

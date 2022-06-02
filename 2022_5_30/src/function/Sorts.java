@@ -17,15 +17,24 @@ public class Sorts {
     private void insertSortRange(int[] arr, int start, int end) {
         for (int i = start + 1; i <= end; i++) {
             int tmp = arr[i];
-            for (int j = i - 1; j >= start; j--) {
+            int j = i - 1;
+            for (; j >= start; j--) {
                 if (arr[j] > tmp) {
                     arr[j + 1] = arr[j];
                 } else {
-                    arr[j + 1] = tmp;
                     break;
                 }
             }
+            arr[j + 1] = tmp;
         }
+    }
+
+    public void quickSortImproved(int[] arr) {
+        qSortImproveWithInsert(arr, 0, arr.length - 1);
+    }
+
+    public void quickSortOriginal(int[] arr) {
+        qSortOriginal(arr, 0, arr.length - 1);
     }
 
     private void qSortOriginal(int[] arr, int left, int right) {
@@ -45,18 +54,33 @@ public class Sorts {
             insertSortRange(arr, left, right);
             return;
         }
-        int div = partitionTwoPoints2(arr, left, right);
+        swap(arr, left, medianOfThree(arr, left, right));
+        int div = partitionDig(arr, left, right);
         qSortImproveWithInsert(arr, left, div - 1);
         qSortImproveWithInsert(arr, div + 1, right);
     }
 
-    public void quickSortImproveWithInsert(int[] arr) {
-        qSortImproveWithInsert(arr, 0, arr.length - 1);
+    private int medianOfThree(int[] arr, int left, int right) {
+        int mid = left + (right - left) / 2;
+        if (arr[left] < arr[right]) {
+            if (arr[mid] < arr[left]) {
+                return left;
+            } else if (arr[mid] > arr[right]) {
+                return right;
+            } else {
+                return mid;
+            }
+        } else {
+            if (arr[mid] > arr[left]) {
+                return left;
+            } else if (arr[mid] < arr[right]) {
+                return right;
+            } else {
+                return mid;
+            }
+        }
     }
 
-    public void quickSortOriginal(int[] arr) {
-        qSortOriginal(arr, 0, arr.length - 1);
-    }
 
     private int partitionHoare(int[] arr, int left, int right) {
         int l = left;
@@ -214,14 +238,16 @@ public class Sorts {
         int len = arr.length;
         for (int i = 1; i < len; i++) {
             int tmp = arr[i];
-            for (int j = i - 1; j >= 0; j--) {
+            int j = i - 1;
+            for (; j >= 0; j--) {
                 if (arr[j] > tmp) {
                     arr[j + 1] = arr[j];
                 } else {
-                    arr[j + 1] = tmp;
+//                    arr[j + 1] = tmp;
                     break;
                 }
             }
+            arr[j + 1] = tmp;
         }
     }
 
