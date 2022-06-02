@@ -16,6 +16,41 @@ import java.util.Stack;
  */
 public class Sorts {
 
+    private void merge(int[] arr, int left, int mid, int right) {
+        int s1 = left;
+        int s2 = mid + 1;
+        int[] tmp = new int[right - left + 1];
+        int index = 0;
+        while (s1 <= mid || s2 <= right) {
+            if (arr[s1] > arr[s2]) {
+                tmp[index] = arr[s2];
+                index++;
+                s2++;
+            } else {
+                tmp[index] = arr[s1];
+                s1++;
+            }
+        }
+        for (int x : tmp) {
+            arr[left] = x;
+            left++;
+        }
+    }
+
+    private void mSort(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int mid = left + (right - left) >>> 1;
+        mSort(arr, left, mid);
+        mSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+
+    public void mergeSort(int[] arr) {
+        mSort(arr, 0, arr.length - 1);
+    }
+
     private void insertSortRange(int[] arr, int start, int end) {
         for (int i = start + 1; i <= end; i++) {
             int tmp = arr[i];
