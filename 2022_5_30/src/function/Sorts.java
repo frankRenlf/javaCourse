@@ -1,5 +1,7 @@
 package function;
 
+import java.util.Stack;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -29,12 +31,37 @@ public class Sorts {
         }
     }
 
+    public void quickSortWithoutRec(int[] arr) {
+        qSortWithoutRec(arr);
+    }
+
     public void quickSortImproved(int[] arr) {
         qSortImproveWithInsert(arr, 0, arr.length - 1);
     }
 
     public void quickSortOriginal(int[] arr) {
         qSortOriginal(arr, 0, arr.length - 1);
+    }
+
+    private void qSortWithoutRec(int[] arr) {
+        int right = arr.length - 1;
+        int left = 0;
+        Stack<Integer> stack = new Stack<>();
+        stack.push(left);
+        stack.push(right);
+        while (!stack.isEmpty()) {
+            right = stack.pop();
+            left = stack.pop();
+            if (right <= left) {
+                continue;
+            }
+//            swap(arr, left, medianOfThree(arr, left, right));
+            int div = partitionDig(arr, left, right);
+            stack.push(left);
+            stack.push(div - 1);
+            stack.push(div + 1);
+            stack.push(right);
+        }
     }
 
     private void qSortOriginal(int[] arr, int left, int right) {

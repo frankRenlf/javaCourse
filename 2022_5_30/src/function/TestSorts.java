@@ -27,8 +27,8 @@ public class TestSorts {
         array = new int[1_0000];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            array[i] = i;
-//            array[i] = random.nextInt(10_0000);
+//            array[i] = i;
+            array[i] = random.nextInt(10_0000);
         }
         return array;
     }
@@ -91,5 +91,14 @@ public class TestSorts {
         sorts.quickSortImproved(arr);
         long endTime = System.currentTimeMillis();
         System.out.println("testQuickSortImproved: " + (endTime - startTime));
+    }
+
+    public void testQuickSortRec() {
+        int[] arr = copyArray(array);
+        long startTime = System.currentTimeMillis();
+        Sorts sorts = new Sorts();
+        sorts.quickSortWithoutRec(arr);
+        long endTime = System.currentTimeMillis();
+        System.out.println("testQuickSortRec: " + (endTime - startTime));
     }
 }
