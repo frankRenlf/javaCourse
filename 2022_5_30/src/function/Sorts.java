@@ -1,5 +1,6 @@
 package function;
 
+import java.util.HashMap;
 import java.util.Stack;
 
 /**
@@ -15,6 +16,26 @@ import java.util.Stack;
  * @Description :
  */
 public class Sorts {
+
+    public void countSort(int[] arr) {
+        int maxVal = arr[0];
+        int minVal = arr[0];
+        int len = arr.length;
+        for (int i = 1; i < len; i++) {
+            maxVal = Math.max(maxVal, arr[i]);
+            minVal = Math.min(minVal, arr[i]);
+        }
+        int range = maxVal - minVal + 1;
+        int[] count = new int[range];
+        for (int k : arr) {
+            count[k - minVal]++;
+        }
+        for (int i = 0, j = 0; i < range; i++) {
+            while (count[i]-- > 0) {
+                arr[j++] = i + minVal;
+            }
+        }
+    }
 
     private void merge(int[] arr, int left, int mid, int right) {
         int s1 = left;

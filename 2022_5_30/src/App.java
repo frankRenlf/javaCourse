@@ -32,9 +32,9 @@ public class App {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{3, 1, 3, 1, 4, 5, 2, 0, 7, 4, 5};
+        int[] arr = new int[]{3,19, 1, 3, 1, 4, 5, 2, 0, 7, 4, 5};
         Sorts sorts = new Sorts();
-        sorts.mergeSortNor(arr);
+        sorts.countSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
