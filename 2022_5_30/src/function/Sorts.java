@@ -71,6 +71,25 @@ public class Sorts {
         merge(arr, left, mid, right);
     }
 
+    public void mergeSortNor(int[] arr) {
+        int gap = 1;
+        int len = arr.length;
+        while (gap < len) {
+            for (int i = 0; i < len; i += 2 * gap) {
+                int mid = i + gap - 1;
+                if (mid >= len) {
+                    mid = len - 1;
+                }
+                int right = mid + gap;
+                if (right >= len) {
+                    right = len - 1;
+                }
+                merge(arr, i, mid, right);
+            }
+            gap *= 2;
+        }
+    }
+
     public void mergeSortWhile(int[] arr) {
         mSortWhile(arr, 0, arr.length - 1);
     }
