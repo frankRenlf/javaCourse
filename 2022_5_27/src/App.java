@@ -28,17 +28,17 @@ class IntCmp implements Comparator<Integer> {
     }
 }
 
-class Student implements Comparable<Student> {
+class Student {
     int age;
 
     public Student(int age) {
         this.age = age;
     }
 
-    @Override
-    public int compareTo(Student o) {
-        return o.age - this.age;
-    }
+//    @Override
+//    public int compareTo(Student o) {
+//        return this.age - o.age;
+//    }
 
     @Override
     public String toString() {
@@ -57,7 +57,12 @@ public class App {
     }
 
     public static void main(String[] args) {
-        PriorityQueue<Student> priorityQueue = new PriorityQueue<>();
+        PriorityQueue<Student> priorityQueue = new PriorityQueue<>(new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o2.age-o1.age;
+            }
+        });
         priorityQueue.offer(new Student(7));
         priorityQueue.offer(new Student(10));
         priorityQueue.offer(new Student(9));
