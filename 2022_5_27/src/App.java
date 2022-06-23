@@ -53,7 +53,7 @@ public class App {
     public static void main5(String[] args) {
         Solution sol = new Solution();
         System.out.println(Arrays.toString(sol.smallestK2(new int[]{9, 2, 1, 3, 5, 7, 8}, 3)));
-        ;
+
     }
 
     public static void main(String[] args) {
