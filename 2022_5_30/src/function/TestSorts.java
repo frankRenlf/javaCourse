@@ -93,12 +93,12 @@ public class TestSorts {
         System.out.println("testQuickSortImproved: " + (endTime - startTime));
     }
 
-    public void testQuickSortRec() {
+    public void testQuickSortWhile() {
         int[] arr = copyArray(array);
         long startTime = System.currentTimeMillis();
         Sorts sorts = new Sorts();
         sorts.quickSortWithoutRec(arr);
         long endTime = System.currentTimeMillis();
-        System.out.println("testQuickSortRec: " + (endTime - startTime));
+        System.out.println("testQuickSortWhile: " + (endTime - startTime));
     }
 }

@@ -158,7 +158,7 @@ public class Sorts {
             if (right <= left) {
                 continue;
             }
-//            swap(arr, left, medianOfThree(arr, left, right));
+            swap(arr, left, medianOfThree(arr, left, right));
             int div = partitionDig(arr, left, right);
             stack.push(left);
             stack.push(div - 1);
