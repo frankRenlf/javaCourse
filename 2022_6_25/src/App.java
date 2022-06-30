@@ -27,7 +27,7 @@ class Student {
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main4(String[] args) {
         Map<Student, Integer> map = new TreeMap<>(new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
@@ -39,7 +39,7 @@ public class App {
         System.out.println(map);
     }
 
-    public static void main3(String[] args) {
+    public static void main(String[] args) {
         Map<String, Integer> map = new HashMap<>();
         map.put("student", 1);
         map.put("a", 2);

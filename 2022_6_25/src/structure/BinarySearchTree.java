@@ -67,27 +67,6 @@ public class BinarySearchTree {
             } else {
                 tp.left = t.right;
             }
-//            if (pre == cur) {
-//                cur = cur.right;
-//                TreeNode parent = pre;
-//                while (cur.left != null) {
-//                    parent = cur;
-//                    cur = cur.left;
-//                }
-//                parent.left = null;
-//                cur.left = root.left;
-//                root = cur;
-//                while (cur.right != null) {
-//                    cur = cur.right;
-//                }
-//                cur.right = pre.right;
-//            } else {
-//                if (pre.val > cur.val) {
-//                    pre.left = cur.left;
-//                } else {
-//                    pre.right = cur.left;
-//                }
-//            }
         }
     }
 

@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98aa29d5-db7c-4241-8f8d-3cecf53df29c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../2022_6_30/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2022_6_30/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2022_6_30/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../2022_6_30/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/leetcode/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_6_25/App$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_6_25/App$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_6_25/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_6_25/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2022_6_25/structure/BinarySearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2022_6_25/structure/BinarySearchTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/structure/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/structure/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2022_6_30/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2022_6_30/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +71,7 @@
       <workItem from="1656123485225" duration="1234000" />
       <workItem from="1656127516049" duration="14206000" />
       <workItem from="1656575591795" duration="61000" />
+      <workItem from="1656586165765" duration="3472000" />
     </task>
     <servers />
   </component>
