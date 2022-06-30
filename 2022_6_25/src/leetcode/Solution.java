@@ -29,6 +29,24 @@ class Node {
 
 public class Solution {
 
+    public List<String> topKFrequent(String[] words, int k) {
+        Map<String, Integer> map = new HashMap<>();
+        for (String s : words) {
+            map.put(s, map.getOrDefault(s, 0) + 1);
+        }
+        List<String> list = new ArrayList<>();
+        for (Map.Entry<String, Integer> elem : map.entrySet()) {
+            list.add(elem.getKey());
+        }
+        list.sort(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return map.get(o2) != map.get(o1) ? map.get(o2) - map.get(o1) : o1.compareTo(o2);
+            }
+        });
+        return list.subList(0, k);
+    }
+
     public Node copyRandomList(Node head) {
         if (head == null) {
             return null;
