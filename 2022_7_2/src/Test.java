@@ -1,7 +1,9 @@
 import hash.HashBuck;
+import impl.Solution;
 
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
@@ -49,18 +51,28 @@ class Person {
 
 public class Test {
 
-    public static void main3(String[] args) {
-        HashMap<String,Integer> hashMap = new HashMap<>();
+    public static void main(String[] args) {
+        int[] array = new int[10_0000];
+        Random rd = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rd.nextInt(1_0000);
+        }
+        Solution sol = new Solution();
+        sol.func3(array);
     }
 
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
+        HashMap<String, Integer> hashMap = new HashMap<>();
+    }
+
+    public static void main2(String[] args) {
         HashBuck<Person, Integer> hashBuck = new HashBuck<>();
         hashBuck.put(new Person(1, "a"), 11);
         hashBuck.put(new Person(2, "c"), 22);
         Person p1 = new Person(3, "d");
         hashBuck.put(p1, 33);
         hashBuck.put(new Person(4, "e"), 44);
-        hashBuck.put(new Person(44,"f"),44);
+        hashBuck.put(new Person(44, "f"), 44);
         hashBuck.put(new Person(12, "f"), 1212);
         System.out.println(hashBuck.get(p1));
 
