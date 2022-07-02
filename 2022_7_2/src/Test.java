@@ -1,5 +1,6 @@
 import hash.HashBuck;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 /**
@@ -47,6 +48,10 @@ class Person {
 }
 
 public class Test {
+
+    public static void main3(String[] args) {
+        HashMap<String,Integer> hashMap = new HashMap<>();
+    }
 
     public static void main(String[] args) {
         HashBuck<Person, Integer> hashBuck = new HashBuck<>();

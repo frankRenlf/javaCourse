@@ -28,7 +28,7 @@ public class HashBuck<K, V> {
 
     private Node<K, V>[] array;
     private int usedSize;
-    private static final int DEFAULT_SIZE = 5;
+    private static final int DEFAULT_SIZE = 1 << 4;
     private static final double DEFAULT_LOAD_FACTOR = 0.75;
     private static final int DEFAULT_EXTEND_COEFFICIENT = 1;
 
