@@ -1,3 +1,8 @@
+import enumDemo.TestEnum;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -13,6 +18,19 @@
 public class Test {
 
     public static void main(String[] args) {
+        Class c = null;
+        try {
+            c = Class.forName("enumDemo.TestEnum");
+            Constructor<?> constructor = c.getDeclaredConstructor(String.class, int.class);
+            constructor.setAccessible(true);
+            TestEnum testEnum = (TestEnum) constructor.newInstance("black", 2);
+        } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | InstantiationException |
+                 IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void main1(String[] args) {
         Class c3 = null;
         try {
             c3 = Class.forName("reflectDemo.Student");
