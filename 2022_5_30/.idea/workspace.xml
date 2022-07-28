@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92df7478-ba58-44bb-850d-d971c7b70cb7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../2022_6_25/src/structure/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2022_6_25/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2022_6_25/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2022_6_25/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../2022_6_25/src/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +33,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/11195/IdeaProjects/javaCourse/2022_6_25",
+    "last_opened_file_path": "C:/Users/11195/IdeaProjects/javaCourse/2022_5_30",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -87,6 +84,7 @@
       <workItem from="1655964294769" duration="9684000" />
       <workItem from="1656035862338" duration="71000" />
       <workItem from="1656124342439" duration="3727000" />
+      <workItem from="1658990573006" duration="1591000" />
     </task>
     <servers />
   </component>
