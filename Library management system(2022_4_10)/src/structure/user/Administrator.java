@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Administrator extends User {
     public Administrator(String name) {
         super(name);
-        this.iOperations = new IOperation[]{
+        super.iOperations = new IOperation[]{
                 new ExitSystem(),
                 new DisplayBook(),
                 new AddBook(),
